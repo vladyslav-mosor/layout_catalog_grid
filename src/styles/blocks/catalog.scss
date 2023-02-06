@@ -2,12 +2,12 @@
   display: grid;
   grid-template-columns: $card-width;
   justify-content: center;
-  gap: 48px;
+  gap: $card-gap;
 
-  max-width: 944px;
+  max-width: getMaxWidth();
   margin: 0 auto;
 
-  @each $index, $value in $media-queries {
+  @each $index, $value in $columns-per-breakpoint {
     @media (min-width: #{$value}) {
       grid-template-columns: repeat(#{$index}, $card-width);
     }
