@@ -1,11 +1,8 @@
 .catalog {
-  display: grid;
-  grid-template-columns: $card-width;
-  justify-content: center;
-  gap: $card-gap;
+  @extend %gridCenter;
 
-  max-width: getMaxWidth();
-  margin: 0 auto;
+  grid-template-columns: $card-width;
+  gap: $card-gap;
 
   @each $index, $value in $columns-per-breakpoint {
     @media (min-width: #{$value}) {
@@ -14,8 +11,8 @@
   }
 
   &__card {
-    display: grid;
-    justify-items: center;
+    @extend %gridCenter;
+
     align-content: center;
     height: 300px;
     border: 1px solid #ccc;
